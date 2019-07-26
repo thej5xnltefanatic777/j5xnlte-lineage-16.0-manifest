@@ -1,0 +1,16 @@
+1. mkdir -p lineage-16.0 
+
+2. cd lineage-16.0 
+
+3. Initialize your local repository using the Lineage trees, use a command repo init -u git://github.com/LineageOS/android.git -b lineage-16.0 
+
+4. Sync it: repo sync 
+
+5. Clone my repo: 
+git clone https://github.com/Sonic-sakthivel123/local_manifest_j5xnlte .repo/local_manifests -b lineage-16.0
+
+6. Sync the repo: repo sync --no-tags --no-clone-bundle --force-sync -c 
+
+7. Add vendorsetup.sh in device/samsung/j5xnlte: cd device/samsung/j5xnle && wget -c https://raw.githubusercontent.com/team-infusion-developers/lineage_manifests/lineage-16.0/vendorsetup.sh && cd ../../.. add_lunch_combo lineage_j5xnlte-userdebug
+
+8. To build: . build/envsetup.sh lunch j5xnlte brunch j5xnlte
